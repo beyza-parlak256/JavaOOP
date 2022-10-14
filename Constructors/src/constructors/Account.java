@@ -8,9 +8,17 @@ public class Account {
     
     // constructor
     public Account(){
-        System.out.println("My Constructor..");
+        /*this.accountNo = "No information";
+        this.balance = 0;
+        this.email = "No information";
+        this.name = "No information";
+        this.phoneNo = "No information";*/
+        
+        this("No information",0,"No information","No information","No information");
+        
+        //System.out.println("My Constructor..");
     }
-    
+   
     public Account(String accountNo, double balance, String name, String email, String phoneNo){
         this.accountNo = accountNo;
         this.balance = balance;
@@ -19,10 +27,24 @@ public class Account {
         this.phoneNo = phoneNo;
     }
     
+    public Account(String name, String email, String phoneNo){
+        this("No information",0, name, email, phoneNo);
+    }
+    
+    public void informationShow(){
+        System.out.println("Account No = " + this.accountNo);
+        System.out.println("Balance = " + this.balance);
+        System.out.println("Name = " + this.name);
+        System.out.println("Email = " + this.email);
+        System.out.println("Phone No = " + this.phoneNo);
+        
+    }
+    
     public  void depositMoney(double amount){
         balance += amount;
         System.out.println("New balance " + balance);
     }
+    
     public  void pullMoney(double amount){
         if(amount > 1500){
             System.out.println("You cannot withdraw more than 1500");  
